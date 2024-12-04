@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style_suporte.css">
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="corpo-esquerda">
+            <div class="content-corpo-esquerda">
+                <div class="foto"></div>
+                <div class="identificacao">
+                    <DIv class="margin-vertical-10">Bem Vindo!</DIv>
+                    <div class="margin-vertical-10">Admin</div>
+                </div>
+                <ul>
+                    <a href="https://www.alldatasheet.com/datasheet-pdf/view/1440068/ETC/DHT11.html"
+                        target="_blank">MANUAL DHT-11</a>
+                </ul>
+                <ul>
+                    <a href="https://www.alldatasheet.com/datasheet-pdf/view/1188696/TGS/LM35.html"
+                        target="_blank">MANUAL LM35</a>
+                </ul>
+                <ul>
+                    <a href="https://github.com/BandTec/web-data-viz" target="_blank">WEB-DATA-VIZ</a>
+                </ul>
+                <ul>
+                    <a href="https://github.com/BandTec/dat-acqu-ino" target="_blank">DAT-ACQU-INO</a>
+                </ul>
+                <ul>
+                    <a class="jira" href="https://wineguard.atlassian.net/jira/servicedesk/projects/WGU/queues/custom"
+                        target="_blank"> JIRA <img src="img/jira.png" height="15px" alt=""></a>
+
+                </ul>
+            </div>
+        </div>
+        <div class="corpo-centro">
+            <div class="cabecalho">
+                <div class="content-cabecalho">
+                    <div>Suporte Wine Guard</div>
+                    <img src="img/sino.png" height="50%" alt="">
+                    <img src="img/WINE GUARD LOGO.png" height="80%" alt="">
+                </div>
+            </div>
+            <div id="container">
+                <center id="bob_ia">
+                    <h1>BobIA</h1>
+                    <textarea id="pergunta" type="text" placeholder="Digite a pergunta..."></textarea>
+                    <br><br>
+                    <button onclick="gerarResposta()">Gerar Resposta</button>
+                    <h3>Resposta da IA:</h3>
+                    <div id="resposta"></div>
+                </center>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+<script>
+    async function gerarResposta() {
+            const pergunta = document.getElementById('pergunta').value;
+
+            const response = await fetch('/perguntar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ pergunta })
+            });
+
+            const data = await response.json();
+
+            resposta.style.display = 'block';
+            document.getElementById('resposta').innerText = data.resultado;
+        }
+</script>

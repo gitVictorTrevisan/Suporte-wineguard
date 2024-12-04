@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+}
+
+:root {
+    --azul-principal: #052E77;
+    --gray-shade-1: #EDF3F3;
+    --gray-shade-2: #D4DCDC;
+    --gray-shade-3: #B0BABA;
+    --gray-shade-4: #8D9898;
+    --main-font-family: "Noto Sans"
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.corpo-esquerda {
+    background: var(--azul-principal);
+    height: 100vh;
+    width: 20vw;
+    float: left;
+}
+
+.corpo-centro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: var(--gray-shade-1);
+    font-family: var(--main-font-family);
+    font-weight: 500;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: center;
+    height: 3em;
+    width: 100%;
+    background: var(--gray-shade-2);
+    margin-bottom: 15PX;
+}
+
+.content-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    padding: 0px 10px 0px 10px;
+
+}
+
+.content-corpo-esquerda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0px 10px 0px;
+    font-family: var(--main-font-family);
+    font-weight: 600;
+    color: var(--gray-shade-1);
+}
+
+.foto {
+    border-radius: 50%;
+    background: url(../img/avatar-3814049_1280.png);
+    background-size: contain;
+    height: 150px;
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.identificacao {
+    display: flex;
+    gap: 5px;
+    margin: 5vh 0vh;
+}
+
+
+.content-corpo-esquerda a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    font-family: var(--main-font-family);
+    color: var(--gray-shade-1);
+}
+
+
+.content-corpo-esquerda ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding-inline-start: 0px;
+    margin: 0px 0px;
+    font-size: 15px;
+    width: 100%;
+    height: 40px;
+}
+
+.content-corpo-esquerda a:hover {
+    background: #031f50;
+}
+
+.margin-vertical-10 {
+    margin: 10px 0px;
+}
+
+
+
+.jira{
+    gap: 10px;
+}
